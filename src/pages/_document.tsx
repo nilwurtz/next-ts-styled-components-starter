@@ -33,11 +33,9 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="viewport" content="width=device-width,height=device-height" key="viewport" />
           <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet"></link>
           {this.props.styles}
         </Head>
-
         <body>
           <Main />
 

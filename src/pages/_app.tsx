@@ -3,6 +3,7 @@ import 'ress';
 import App, { AppContext } from 'next/app';
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
+import Head from 'next/head';
 
 const GlobalStyle = createGlobalStyle`
   *, :before, :after{
@@ -33,10 +34,13 @@ export default class extends App {
   render(): JSX.Element {
     const { Component, pageProps } = this.props;
     return (
-      <React.Fragment>
+      <>
+        <Head>
+          <meta name="viewport" content="width=device-width,height=device-height" key="viewport" />
+        </Head>
         <GlobalStyle />
         <Component {...pageProps} />
-      </React.Fragment>
+      </>
     );
   }
 }
